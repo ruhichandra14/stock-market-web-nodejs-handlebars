@@ -10,7 +10,7 @@ const partialsPath = join(__dirname, "./partials");
 const app = express();
 app.use(express.static(publicDirPath));
 
-app.set('port', (process.env.PORT || 3000));
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
@@ -26,8 +26,9 @@ app.get("", (req, res) => {
     })
 })
 
-app.get("/*", host, (req, res) => {
+app.get("/*", (req, res) => {
     res.send("Invalid url!!");
 })
 
-app.listen(app.get('port'), "0.0.0.0", () => console.log("served started at ", port));
+
+app.listen(port, "0.0.0.0", () => console.log("served started at ", port));
