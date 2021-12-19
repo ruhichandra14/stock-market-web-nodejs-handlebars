@@ -6,10 +6,11 @@ const getMarketData = require("./util");
 const publicDirPath = join(__dirname, './public');
 const viewsPath = join(__dirname, "./views");
 const partialsPath = join(__dirname, "./partials");
-const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.static(publicDirPath));
+
+app.set('port', (process.env.PORT || 3000));
 
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
@@ -25,8 +26,8 @@ app.get("", (req, res) => {
     })
 })
 
-app.get("/*", (req, res) => {
+app.get("/*", host, (req, res) => {
     res.send("Invalid url!!");
 })
 
-app.listen(port, () => console.log("served started at ", port));
+app.listen(app.get('port'));
