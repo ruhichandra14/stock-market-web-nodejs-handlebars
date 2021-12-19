@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: rgb(138, 108, 245);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+tbody, td, th{
+    border: 1px solid rgb(138, 108, 245);
+}
+
+table{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td, th {
+    padding: 10px;
+}

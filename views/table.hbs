@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>market summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    {{>header}}
+<table>
+    <tbody>
+        {{#each data}}
+            <tr>
+                <td>{{this.exchange_id}}</td>
+                <td>{{this.symbol}}</td>
+                <td>{{this.quote_asset}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.change_24h}}</td>
+                <td>{{this.spread}}</td>
+                <td>{{this.volume_24h}}</td>
+                <td>{{this.status}}</td>
+                <td>{{this.created_at}}</td>
+                <td>{{this.volume_24h}}</td>
+                <td>{{this.updated_at}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+</body>
+
+</html>
