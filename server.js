@@ -30,4 +30,4 @@ app.get("/*", host, (req, res) => {
     res.send("Invalid url!!");
 })
 
-app.listen(app.get('port'));
+app.listen(app.get('port'), "0.0.0.0", () => console.log("served started at ", port));
