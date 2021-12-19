@@ -6,6 +6,7 @@ const getMarketData = require("./util");
 const publicDirPath = join(__dirname, './public');
 const viewsPath = join(__dirname, "./views");
 const partialsPath = join(__dirname, "./partials");
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.static(publicDirPath));
@@ -28,4 +29,4 @@ app.get("/*", (req, res) => {
     res.send("Invalid url!!");
 })
 
-app.listen(3000, () => console.log("served started..."));
+app.listen(port, () => console.log("served started at ", port));
